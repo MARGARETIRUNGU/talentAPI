@@ -1,16 +1,16 @@
 package com.example.talent_man.services;
 
-import com.example.talent_man.models.PotentialAttributeAssessmentQuestionsScore;
+import com.example.talent_man.models.FinalScore;
 
 import java.util.List;
 
 public interface PotentialAttributeAssessmentQuestionsScoreService {
     //create
-    PotentialAttributeAssessmentQuestionsScore addScore(PotentialAttributeAssessmentQuestionsScore pScore);
+    FinalScore addScore(FinalScore pScore);
     //read
-    PotentialAttributeAssessmentQuestionsScore getEmployeeScore(int employeeId);
-    PotentialAttributeAssessmentQuestionsScore getManagersSoreOnEmployee(int employeeId, int managerId);
-    List<PotentialAttributeAssessmentQuestionsScore> getAllScores(int employeeId, int managerId);
+    FinalScore getEmployeeScore(int employeeId);
+    FinalScore getManagersSoreOnEmployee(int employeeId, int managerId);
+    List<FinalScore> getAllScores(int employeeId, int managerId);
     //update
     //delete
 }

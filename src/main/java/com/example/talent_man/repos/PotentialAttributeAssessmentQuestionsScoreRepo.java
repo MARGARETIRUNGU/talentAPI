@@ -1,7 +1,7 @@
 package com.example.talent_man.repos;
 
-import com.example.talent_man.models.PotentialAttributeAssessmentQuestionsScore;
+import com.example.talent_man.models.FinalScore;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface PotentialAttributeAssessmentQuestionsScoreRepo extends JpaRepository<PotentialAttributeAssessmentQuestionsScore, Integer> {
+public interface PotentialAttributeAssessmentQuestionsScoreRepo extends JpaRepository<FinalScore, Integer> {
 }

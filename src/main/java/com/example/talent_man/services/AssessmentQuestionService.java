@@ -1,16 +1,16 @@
 package com.example.talent_man.services;
 
-import com.example.talent_man.models.AssessmentQuestion;
+import com.example.talent_man.models.Assessment;
 
 import java.util.List;
 
 public interface AssessmentQuestionService {
     //create
-    AssessmentQuestion addAssessmentQuestion(AssessmentQuestion assQuestion);
+    Assessment addAssessmentQuestion(Assessment assQuestion);
     //read
-    AssessmentQuestion getAssessmentQuestionById(int id);
-    List<AssessmentQuestion> getAssessmentAllQuestions();
+    Assessment getAssessmentQuestionById(int id);
+    List<Assessment> getAssessmentAllQuestions();
     //update
-    AssessmentQuestion updateAssessmentQuestion(int id, AssessmentQuestion assQuestion);
+    Assessment updateAssessmentQuestion(int id, Assessment assQuestion);
     //delete
 }

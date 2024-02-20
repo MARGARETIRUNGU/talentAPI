@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.Set;
+
 @Data
 @Entity
 @Table(name = "potential_attributes")
@@ -20,4 +22,8 @@ public class PotentialAttribute implements Serializable {
     private String potentialAttributeName;
     @Column(name = "potential_attribute_description", columnDefinition = "TEXT")
     private String potentialAttributeDescription;
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "potential_attribute_id")
+    Set<Assessment> assessments;
 }

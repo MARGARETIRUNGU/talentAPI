@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.Set;
 
 @Data
 @Entity
@@ -14,15 +15,19 @@ public class AssessmentQuestion implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "assessment_question_id", columnDefinition = "INTEGER")
-    private int AssessmentQuestionId;
-    @Column(name = "potential_attribute_id", columnDefinition = "INTEGER")
-    private int potentialAttributeId;
-    @Column(name = "Assessment_question_description", columnDefinition = "VARCHAR(255)")
-    private String AssessmentQuestionDescription;
-    @Column(name = "Assessment_question_score", columnDefinition = "INTEGER")
-    private int AssessmentQuestionScore;
-    @Column(name = "employee_assessment_question_score", columnDefinition = "INTEGER")
-    private int EmployeeAssessmentQuestionScore;
-    @Column(name = "employee_manager_assessment_question_score", columnDefinition = "INTEGER")
-    private int EmployeeManagerAssessmentQuestionScore;
+    private int assessmentQuestionId;
+
+    @Column(name = "assessment_question_description", columnDefinition = "INTEGER")
+    private String assessmentQuestionDescription;
+
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "assessment_question_id")
+    Set<Choice> choices;
+
+    @OneToMany(mappedBy = "question", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    Set<UserQuestionAnswer> selectedAnswers;
+
+
+
 }

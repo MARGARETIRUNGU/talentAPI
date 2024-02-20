@@ -20,7 +20,7 @@ public class PotentialAttributeServiceImp implements PotentialAttributeService {
 
     @Override
     public PotentialAttribute getPotentialAttributeById(int id) {
-        return null;
+        return repo.getReferenceById(id);
     }
 
     @Override

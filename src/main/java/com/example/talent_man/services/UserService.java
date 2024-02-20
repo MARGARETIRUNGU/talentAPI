@@ -1,8 +1,11 @@
 package com.example.talent_man.services;
 
+import com.example.talent_man.models.user.Manager;
 import com.example.talent_man.models.user.User;
 
 public interface UserService {
     //Create
-    User addUser(User user);
+    Manager addUser(Manager user);
+    //Read
+    Manager getManagerById(int id);
 }

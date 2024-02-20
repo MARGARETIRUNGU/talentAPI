@@ -1,11 +1,14 @@
 package com.example.talent_man.models.user;
 
+import com.example.talent_man.models.Assessment;
+import com.example.talent_man.models.UserQuestionAnswer;
 import com.example.talent_man.utils.Constants;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -23,6 +26,14 @@ public abstract class User implements Serializable {
     private String userType;
     @Column(name = "user_full_name", columnDefinition = "VARCHAR(255)")
     private String userFullName;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    Set<Assessment> assessments;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    Set<UserQuestionAnswer> userQuestionAnswers;
+
 
     public User(String name, int roleId){
         this.roleId = roleId;

@@ -4,13 +4,14 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.util.Set;
 
 @Data
 @Entity
 @Table(name = "choices")
 @NoArgsConstructor
-public class Choice {
+public class Choice implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "choice_id", columnDefinition = "INTEGER")

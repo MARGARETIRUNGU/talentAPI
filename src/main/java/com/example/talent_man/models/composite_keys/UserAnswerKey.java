@@ -1,4 +1,4 @@
-package com.example.talent_man.models;
+package com.example.talent_man.models.composite_keys;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;

@@ -1,5 +1,6 @@
 package com.example.talent_man.models;
 
+import com.example.talent_man.models.composite_keys.UserAnswerKey;
 import com.example.talent_man.models.user.User;
 import jakarta.persistence.*;
 import lombok.Data;

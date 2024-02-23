@@ -1,16 +1,20 @@
 package com.example.talent_man.services;
 
 import com.example.talent_man.models.Assessment;
+import com.example.talent_man.models.AssessmentQuestion;
 
 import java.util.List;
 
+/*
+                            NOTE
+        - Assessment questions will be added in the assessment service to maintain the integrity of the database.
+ */
+
 public interface AssessmentQuestionService {
-    //create
-    Assessment addAssessmentQuestion(Assessment assQuestion);
     //read
-    Assessment getAssessmentQuestionById(int id);
-    List<Assessment> getAssessmentAllQuestions();
+    AssessmentQuestion getAssessmentQuestionById(int id);
+    List<AssessmentQuestion> getAssessmentAllQuestions();
     //update
-    Assessment updateAssessmentQuestion(int id, Assessment assQuestion);
+    AssessmentQuestion updateAssessmentQuestion(int id, Assessment assQuestion);
     //delete
 }

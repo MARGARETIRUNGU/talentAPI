@@ -9,7 +9,7 @@ import java.util.Set;
 
 @Data
 @Entity
-@Table(name = "assessment_questions")
+@Table(name = "assessments")
 @NoArgsConstructor
 public class Assessment implements Serializable {
     @Id

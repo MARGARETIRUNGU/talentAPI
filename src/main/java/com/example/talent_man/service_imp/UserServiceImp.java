@@ -21,4 +21,9 @@ public class UserServiceImp implements UserService {
     public Manager getManagerById(int id) {
         return repo.getReferenceById(id);
     }
+
+    @Override
+    public User getUserById(int id) {
+        return repo.getReferenceById(id);
+    }
 }

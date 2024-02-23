@@ -8,4 +8,6 @@ public interface UserService {
     Manager addUser(Manager user);
     //Read
     Manager getManagerById(int id);
+
+    User getUserById(int id);
 }

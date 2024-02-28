@@ -26,7 +26,8 @@ public class UserController {
             }else if (user.getRoleId() != 1) {
                 return new ApiResponse(300, "End point to be used to add manager without a manager");
             }else{
-                User added = service.addUser(user);
+                Manager user1 = new Manager(user.getUserFullName(), user.getRoleId());
+                User added = service.addUser(user1);
                 return new ApiResponse(200, added.toString() + " successfully");
             }
         }catch (Exception e){
@@ -40,7 +41,6 @@ public class UserController {
             //getting the employees manager
             Manager man =  service.getManagerById(managerId);
 
-            System.out.println(man);
             if(managerId == 0){
                 return new ApiResponse(300, "Enter a valid id");
             } else if (emp == null) {
@@ -83,7 +83,7 @@ public class UserController {
             } else if (attribute.getPotentialAttributeDescription() == null || attribute.getPotentialAttributeDescription().equals("")) {
                 return new ApiResponse(300, "Attribute requires a description");
             }else{
-                Manager manger = service.getManagerById(managerId);
+                Manager manger = (Manager) service.getManagerById(managerId);
 
                 if (manger.getPotentialAttributeSet() == null || manger.getPotentialAttributeSet().isEmpty()){
                     Set<PotentialAttribute> att = new HashSet<>();
@@ -92,7 +92,7 @@ public class UserController {
                 }else{
                     manger.getPotentialAttributeSet().add(attribute);
                 }
-                Manager manager = service.addUser(manger);
+                Manager manager = (Manager) service.addUser(manger);
                 return new ApiResponse(200, "Dear " + manager.getUserFullName() + ", " + attribute.toString() + " added successfully");
 
             }

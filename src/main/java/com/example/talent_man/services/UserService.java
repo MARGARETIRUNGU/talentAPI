@@ -5,9 +5,10 @@ import com.example.talent_man.models.user.User;
 
 public interface UserService {
     //Create
-    Manager addUser(Manager user);
+    User addUser(User user);
     //Read
     Manager getManagerById(int id);
+
 
     User getUserById(int id);
 }

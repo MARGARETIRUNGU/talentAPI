@@ -16,7 +16,7 @@ public class PotentialAttributesController {
     @Autowired
     private PotentialAttributeServiceImp service;
 
-    @PostMapping("/addAssessments")
+    @PostMapping(value = "/addAssessments", consumes = "application/json")
     public ApiResponse addAssessment(@RequestParam int attributeId, @RequestBody Assessment ass){
 
         try{

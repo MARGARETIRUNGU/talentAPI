@@ -15,11 +15,11 @@ public class Assessment implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "assessment_id", columnDefinition = "INTEGER")
-    private int AssessmentId;
+    private int assessmentId;
     @Column(name = "assessment_name", columnDefinition = "VARCHAR(255)")
-    private String AssessmentName;
+    private String assessmentName;
     @Column(name = "Assessment_question_description", columnDefinition = "VARCHAR(255)")
-    private String AssessmentDescription;
+    private String assessmentDescription;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "assessment_id")
